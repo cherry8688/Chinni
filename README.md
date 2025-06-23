@@ -1,5 +1,5 @@
 # Chinni
-Welcome to Chinni Digital Studio Wedpage
+Welcome to Chinni Digital
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -75,12 +75,51 @@ Welcome to Chinni Digital Studio Wedpage
       color: #ffffff;
       text-decoration: underline;
     }
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 400px;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+    }
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .modal-content button {
+      background-color: #0055aa;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">Chinni Digital Studio</div>
-    <div class="login">Login</div>
+    <div class="login" onclick="openModal()">Login</div>
   </header>  <section class="banner">
     <h1>Flat 50% Off on All Photo Frames!</h1>
     <p>Explore Wooden, Acrylic, Collage & Custom Designs</p>
@@ -114,6 +153,26 @@ Welcome to Chinni Digital Studio Wedpage
       <a href="https://maps.app.goo.gl/m1PJustoXnhbGnxB6">Map</a>
     </p>
     <p>&copy; 2025 Chinni Digital Studio</p>
-  </footer>
-</body>
+  </footer>  <!-- Login Modal -->  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <h2>Login</h2>
+      <input type="text" placeholder="Enter Mobile Number">
+      <input type="password" placeholder="Enter Password">
+      <button onclick="closeModal()">Login</button>
+    </div>
+  </div>  <script>
+    function openModal() {
+      document.getElementById('loginModal').style.display = 'block';
+    }
+    function closeModal() {
+      document.getElementById('loginModal').style.display = 'none';
+      alert('Login Successful! Welcome to Chinni Digital Studio.');
+    }
+    window.onclick = function(event) {
+      const modal = document.getElementById('loginModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script></body>
 </html>
